@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import useGnb from "../hooks/useGnb";
 
 export default function GNB() {
-  const count = useSelector((state) => state.gnb.count);
+  const { count } = useGnb();
 
   return (
     <header>

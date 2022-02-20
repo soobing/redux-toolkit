@@ -1,16 +1,14 @@
-import { useDispatch } from "react-redux";
-
-import { decrement, increment } from "../store/gnbSlice";
+import useGnb from "../hooks/useGnb";
 
 export default function Home() {
-  const dispatch = useDispatch();
+  const { increment, decrement } = useGnb();
   return (
     <div>
       <h1>HOME</h1>
       <section>
         <p>GNB의 카운터를 조정해봅시다</p>
-        <button onClick={() => dispatch(increment())}> + </button>
-        <button onClick={() => dispatch(decrement())}> - </button>
+        <button onClick={() => increment()}> + </button>
+        <button onClick={() => decrement()}> - </button>
       </section>
     </div>
   );
