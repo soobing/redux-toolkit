@@ -1,13 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import { login, logout } from "../store/userSlice";
+import useLogin from "../hooks/useLogin";
 
 export default function Login() {
-  const dispatch = useDispatch();
-  const session = useSelector((state) => state.user.session);
-  const isLogin = session !== null;
+  const { isLogin, login, logout } = useLogin();
 
   const onClickButton = () =>
-    dispatch(isLogin ? logout() : login("user정보가 들어간다고 가정"));
+    isLogin ? logout() : login("user정보가 들어간다고 가정");
   return (
     <div>
       <h1>Login</h1>
